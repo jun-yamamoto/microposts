@@ -100,3 +100,156 @@ Processing by StaticPagesController#home as HTML
   [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
   Rendered layouts/_header.html.erb (23.6ms)
 Completed 200 OK in 632ms (Views: 630.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 02:22:30 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (11.2ms)
+Completed 200 OK in 560ms (Views: 559.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 27.141.88.240 at 2016-12-11 02:22:35 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (24.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 80ms (Views: 79.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 27.141.88.240 at 2016-12-11 02:22:37 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p8JWUIISz8rZS1GgJ/HL9mGhba3e6HkG24OAnmqucTnuPo8QON8cJ8l5yVd5KfcDdoQBjhZGoaU3dUs8ZLVMWQ==", "session"=>{"email"=>"yamamoto@cocolomachi.co.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "yamamoto@cocolomachi.co.jp"]]
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 27.141.88.240 at 2016-12-11 02:22:44 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQVDJ4VKGhbecscpCb+XLgtDlB0cV6fRI33IhG8wu+Uk+ZpnP4fJ+85AX95XZ6vbHGb4PtT5f3LPiwMmYSuGhQ==", "session"=>{"email"=>"yamamoto@cocolomachi.co.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "yamamoto@cocolomachi.co.jp"]]
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 27.141.88.240 at 2016-12-11 02:22:54 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lJrY2CDtUQyxStTrL+LNrDmbebrm9k+IvWxrO+TxQW/rrIj2k5mqSL3s6TyZ7fDp8MBxSM1AZ3OA3oO4Yj4ZQ==", "session"=>{"email"=>"yamamoto@cocolomachi.co.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "yamamoto@cocolomachi.co.jp"]]
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 27.141.88.240 at 2016-12-11 02:23:00 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nndZW9V6jor+OFVgY/YDMgWlBNcxBYMDaUbez1Pg4VfXi4Abb7ddZ+4KzZc9Lj/HEoBo9PmrW6CFsBVtXfvcNw==", "session"=>{"email"=>"yamamoto@cocolomachi.co.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "yamamoto@cocolomachi.co.jp"]]
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 27.141.88.240 at 2016-12-11 02:23:05 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 27.141.88.240 at 2016-12-11 02:23:16 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oupyESCqSiPYSqI9jVcOwDM/sOsHGOJgfjSfMd5Hw7XrFqtRmmeZzsh4OsrTjzI1JBrcyM+2OsOSwlST0Fz+1Q==", "session"=>{"email"=>"yamamoto@cocolomachi.co.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "yamamoto@cocolomachi.co.jp"]]
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 02:23:25 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 54ms (Views: 53.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 27.141.88.240 at 2016-12-11 02:23:27 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 27.141.88.240 at 2016-12-11 02:23:30 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (2.7ms)
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 70ms (Views: 61.2ms | ActiveRecord: 0.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20161211022849)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_microposts_on_user_id" ON "microposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161211022849"]]
+  [1m[36m (18.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
