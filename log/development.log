@@ -253,3 +253,142 @@ Migrating to CreateMicroposts (20161211022849)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 02:42:45 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (3.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 2546ms (Views: 2519.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/custom.self-d49f19b99838ab02cdd701dc56932cfef67cf99d98d854a2be22cd3ace756422.css?body=1" for 27.141.88.240 at 2016-12-11 02:42:48 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/signup" for 27.141.88.240 at 2016-12-11 02:42:53 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (3.8ms)
+  Rendered users/new.html.erb within layouts/application (44.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 118ms (Views: 108.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 27.141.88.240 at 2016-12-11 02:42:58 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 02:43:02 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 27.141.88.240 at 2016-12-11 02:43:03 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 87ms (Views: 85.8ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRelationships (20161211024417)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_followed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_followed_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+[0m
+  [1m[35m (5.2ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161211024417"]]
+  [1m[35m (26.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_follower_id_and_followed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_follower_id_and_followed_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_followed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_followed_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_follower_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
