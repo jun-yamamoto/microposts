@@ -839,3 +839,315 @@ Processing by StaticPagesController#home as HTML
   Rendered static_pages/home.html.erb within layouts/application (9.6ms)
   Rendered layouts/_header.html.erb (1.1ms)
 Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/microposts" for 27.141.88.240 at 2016-12-11 10:46:47 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CY758N15Ad8ID8Vy2LVn0XrLdw1FoDPvTGoNrfB0jl4p5Ui1FKrDWfpuXfK4QZ5jU0KYmYBTtxjvP3P/gd7EBg==", "micropost"=>{"content"=>"test"}, "commit"=>"Post"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "test"], ["user_id", 2], ["created_at", "2016-12-11 10:46:48.438117"], ["updated_at", "2016-12-11 10:46:48.438117"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://techacademy-junyamamoto.c9users.io/
+Completed 302 Found in 121ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 10:46:48 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (3.8ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (12.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 427ms (Views: 423.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/microposts" for 27.141.88.240 at 2016-12-11 10:46:59 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LZu0P4mZIogVaIWTbTJ00pgIWiavLmM38Odzl8AFacYN8AV6QErgDucJHRMNxo1gsYG1smrd58BTsg3Fsa8jng==", "micropost"=>{"content"=>"test2"}, "commit"=>"Post"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "test2"], ["user_id", 2], ["created_at", "2016-12-11 10:46:59.383697"], ["updated_at", "2016-12-11 10:46:59.383697"]]
+  [1m[36m (16.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://techacademy-junyamamoto.c9users.io/
+Completed 302 Found in 24ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 10:46:59 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (3.8ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (4.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 137ms (Views: 134.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 10:47:02 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.3ms)
+  [1m[35mMicropost Exists (0.4ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (19.1ms)
+  Rendered users/show.html.erb within layouts/application (50.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 109ms (Views: 103.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 27.141.88.240 at 2016-12-11 10:48:16 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mMicropost Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 10:49:50 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.1ms)
+  [1m[35mMicropost Exists (0.2ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 127ms (Views: 122.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 10:49:54 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mMicropost Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMicropost Load (0.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 10:49:55 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[35mMicropost Exists (0.1ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMicropost Load (0.1ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (1.7ms)
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 70ms (Views: 68.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 10:50:05 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.0ms)
+  [1m[36mMicropost Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC[0m  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (162.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 224ms (Views: 221.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 10:50:09 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (2.3ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 92ms (Views: 88.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:10:26 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (3.1ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (2.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 134ms (Views: 97.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:10:34 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (2.2ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (1.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 209ms (Views: 206.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:15:53 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (1.9ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (1.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:15:58 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_micropost_form.html.erb (1.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/microposts" for 27.141.88.240 at 2016-12-11 12:16:05 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"piFSgrOqW2UN05F8bdl7F0fqLz94Lk0S4Wfot0ptJFGGSuPHenmZ4/+yCfwNLYKlbmPAq73dyeVCMpblO8duCQ==", "micropost"=>{"content"=>"aaaaa"}, "commit"=>"Post"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "aaaaa"], ["user_id", 2], ["created_at", "2016-12-11 12:16:05.291610"], ["updated_at", "2016-12-11 12:16:05.291610"]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://techacademy-junyamamoto.c9users.io/
+Completed 302 Found in 24ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:16:05 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (1.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:16:12 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_micropost_form.html.erb (1.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for 27.141.88.240 at 2016-12-11 12:16:16 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/_follow_form.html.erb (0.6ms)
+  [1m[35mMicropost Exists (0.3ms)[0m  SELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?  ORDER BY "microposts"."created_at" DESC  [["user_id", 2]]
+  Rendered microposts/_micropost.html.erb (2.4ms)
+  Rendered users/show.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 69ms (Views: 65.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('hanako_kirameki@example2.com') LIMIT 1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "hanako_kirameki2"], ["email", "hanako_kirameki@example2.com"], ["password_digest", "$2a$10$wIKDA/lV9kGcYlkTRqR62eFgiUqcZA4c1KoYYVUBQDFiuvD.Rkbda"], ["created_at", "2016-12-11 12:17:18.883954"], ["updated_at", "2016-12-11 12:17:18.883954"]]
+  [1m[35m (14.8ms)[0m  commit transaction
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-11 12:18:51 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_user_info.html.erb (3.8ms)
+  Rendered shared/_error_messages.html.erb (2.5ms)
+  Rendered shared/_micropost_form.html.erb (16.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (27.1ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 723ms (Views: 648.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/3" for 27.141.88.240 at 2016-12-11 12:19:01 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT 1  [["follower_id", 2], ["id", 3]]
+  Rendered users/_follow.html.erb (7.2ms)
+  Rendered users/_follow_form.html.erb (113.9ms)
+  [1m[36mMicropost Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT 1[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (121.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 185ms (Views: 179.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/relationships" for 27.141.88.240 at 2016-12-11 12:19:04 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RelationshipsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SzYUUjgnTxG91t4bzVayx3yBYblMs80yhQwn1MBNi3xrXaUX8fSNl0+3Rputokt1VQiOLYlAScUmWVmGsefBJA==", "followed_id"=>"3", "commit"=>"Follow"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followed_id" = ? LIMIT 1  [["follower_id", 2], ["followed_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "relationships" ("followed_id", "follower_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["followed_id", 3], ["follower_id", 2], ["created_at", "2016-12-11 12:19:04.099218"], ["updated_at", "2016-12-11 12:19:04.099218"]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followed_id" = ? LIMIT 1  [["follower_id", 2], ["followed_id", 3]]
+  Rendered users/_unfollow.html.erb (3.8ms)
+  Rendered relationships/create.js.erb (10.8ms)
+Completed 200 OK in 46ms (Views: 22.1ms | ActiveRecord: 18.3ms)
