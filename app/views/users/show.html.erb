@@ -3,7 +3,8 @@
     <section class="user_info">
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
+      <span>場所：<%= @user.place %></span>
+  </span>自己紹介：<%= @user.profile %></span>
       <span><b>Microposts:</b> <%= @user.microposts.count %></span>
     </section>
         <section class="stats">
