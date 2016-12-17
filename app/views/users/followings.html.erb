@@ -1,0 +1,8 @@
+フォローリスト
+
+# = render @followings %>  => /app/views/users/_user.html.erb
+
+<% @following.each do |user| %>
+    <%= link_to  gravatar_for(user), user %>
+    <%= user.name %>
+<% end %>
