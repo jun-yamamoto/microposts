@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_user, only: [:edit, :update, :destroy,
-                                        :following, :followers]
+  before_action :check_user, only: [:edit, :update, :destroy,:following, :followers]
   
   def index
     @users = User.all
@@ -59,7 +58,7 @@ class UsersController < ApplicationController
     @title = "Followers"
     @user  = User.find(params[:id])
     @users = @user.follower_users
-    render 'show_follow'
+    render 'show_follower'
   end
   
   
