@@ -17689,3 +17689,23 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   Rendered layouts/_header.html.erb (1.9ms)
 Completed 200 OK in 223ms (Views: 221.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 27.141.88.240 at 2016-12-20 11:25:35 +0000
+Cannot render console from 27.141.88.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "users".id FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?[0m  [["follower_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?  [["user_id", 1]]
+  Rendered shared/_user_info.html.erb (3.9ms)
+  Rendered shared/_error_messages.html.erb (12.1ms)
+  Rendered shared/_micropost_form.html.erb (22.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" IN (2, 3, 1)[0m
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" IN (2, 3, 1)  ORDER BY "microposts"."created_at" DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3)[0m
+  Rendered microposts/_micropost.html.erb (11.5ms)
+  Rendered shared/_feed.erb (24.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (59.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 970ms (Views: 867.3ms | ActiveRecord: 3.4ms)
