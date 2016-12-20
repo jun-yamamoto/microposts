@@ -2,13 +2,14 @@ class UsersController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
   
   def index
-    @users = User.all
+    users = User.all
+    @users = users.page(params[:page]).per(2)
   end
   
   
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc)
+    @microposts = @user.microposts.order(created_at: :desc).page(params[:page]).per(2)
   end
   
   def new
@@ -50,14 +51,14 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user  = User.find(params[:id])
-    @users = @user.following_users
+    @users = @user.following_users.page(params[:page]).per(2)
     render 'show_follow'
   end
   
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
-    @users = @user.follower_users
+    @users = @user.follower_users.page(params[:page]).per(2)
     render 'show_follower'
   end
   
