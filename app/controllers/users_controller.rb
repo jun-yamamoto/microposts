@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_user, only: [:edit, :update, :destroy,:following, :followers]
+  before_action :check_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.all
